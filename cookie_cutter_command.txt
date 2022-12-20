@@ -1,0 +1,3 @@
+cookiecutter cookie-mlflow-step -o src
+
+# create pipeline step with conda and MLProject
