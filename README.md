@@ -16,6 +16,7 @@ In this project you will build such a pipeline.
   * [The configuration](#the-configuration)
   * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
   * [Pre-existing components](#pre-existing-components)
+- [Run a pipeline version](#run-pipeline)
 - File Structure
 - License
 
@@ -123,6 +124,20 @@ the environment and the parameters for the pipeline to run correctly and avoid h
 
 each subfolder of `src/` and `components/` contains the necessary `run.py`, `conda.yml` and `MLproject` for the step to run.
 Each step is called in `main.py` and can be skipped or included as described in [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps).
+
+## Run a pipeline version
+To run a specific release version of the github repository, just run:
+```bash
+>  mlflow run https://github.com/PaoloFantine/build-ml-pipeline-for-short-term-rental-prices.git 
+-v [pipeline version] 
+-P hydra_options="[override options as needed]"
+```
+
+versions tags have the format v#.#.#, so, running version 1.0.2 would need a call as:
+```bash
+>  mlflow run https://github.com/PaoloFantine/build-ml-pipeline-for-short-term-rental-prices.git 
+-v v1.0.2 
+```
 
 ## License
 
